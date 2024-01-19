@@ -34,6 +34,7 @@ Assalamu'alaikum! Saya Salsabila
 # 3. Jelaskan kegunaan function fmt.Errorf apa bedanya dengan errors.New? Beri contoh code, copy-paste outputnya.
 Fungsi `errors.New` hanya akan mengembalikan error dengan pesan error statis, sementara fungsi `fmt.Errorf` memungkin formatting string dengan values, sama seperti `fmt.Printf` atau `fmt.Sprintf`
 
+```
 package main
 
 import (
@@ -41,8 +42,10 @@ import (
 )
 
 func main() {
-	const name, id = "bueller", 17
+	const name, id = "whoami", 3
 	err := fmt.Errorf("user %q (id %d) not found", name, id)
 	fmt.Println(err.Error())
 }
+```
 
+Output: "user "whoami" (id 3) not found"
